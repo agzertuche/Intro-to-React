@@ -1,0 +1,36 @@
+{
+  "name": "photo-album",
+  "description": "App to manage my favorites photos form internet and to share albums with people.",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Arturo De la Garza",
+    "url": "https://twitter.com/agzertuche"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "re-base": "^3.0.5",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
+    "react-scripts": "1.0.14",
+    "semantic-ui-css": "^2.2.12",
+    "semantic-ui-react": "^0.75.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.9.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
