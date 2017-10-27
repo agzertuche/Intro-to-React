@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './Nav.css';
 import { Menu } from 'semantic-ui-react';
 
+const items = ['albums', 'photos'];
+
 class Nav extends React.Component {
   state = {
     activeItem: 'albums'
@@ -29,8 +31,6 @@ class Nav extends React.Component {
   }
 
   render() {
-    const items = ['albums', 'photos'];
-
     return (
       <Menu tabular>
         {

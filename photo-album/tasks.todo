@@ -1,0 +1,55 @@
+Album:
+  ☐ AlbumForm
+    ✔ Modify @done (2017-10-27 08:15:38)
+    ✔ Add @done (2017-10-27 08:15:43)
+    ✔ Delete @done (2017-10-27 08:18:36)
+    ☐ Fix validation
+  ☐ Fix album thumbnails alignment
+  ☐ StatusBar
+    ☐ Add total information
+    ☐ Align create button to the right
+
+Photos:
+  ☐ PhotoForm
+    ☐ Modify
+    ☐ Add
+    ☐ Delete
+
+Router:
+  ☐ Albums
+  ☐ Photos
+  
+LocalStorage:
+  ☐ Add
+  ☐ Edit
+  ☐ Delete
+
+Firebase:
+  ☐ Add firebase to sync data
+
+General:
+  ☐ Clear terminal warnings
+  ☐ Clear browser warnings
+  ☐ Reorganize component folder scaffolding
+
+Testing:
+  ☐ Write some Tests
+  ☐ Test on mobile
+
+Redux:
+  ☐ Implement store
+  ☐ actions
+  ☐ reducers
+
+Autentication:
+  ☐ Login component
+  ☐ Implement oauth
+
+Deploying:
+  ☐ Publishing the app to herokuapp
+
+Course Info:
+  ☐ Create boilerplate repository
+  ☐ Todo simple repository
+  ☐ Initial repository
+  ☐ Final repository

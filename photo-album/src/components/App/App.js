@@ -2,22 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Nav from '../Nav';
 import Main from '../Main';
-import samplePhotos from '../../data/samplePhotos';
-import sampleAlbums from '../../data/sampleAlbums';
 
 class App extends Component {
   state = { 
     activeNavItem: 'albums',
-    photos: {},
-    albums: {}
   };
-
-  componentWillMount() {
-    this.setState({
-      photos: samplePhotos,
-      albums: sampleAlbums
-    });
-  }
 
   handleNavItemClick = (e, name) => {
     this.setState({
@@ -26,7 +15,7 @@ class App extends Component {
   };
 
   render() {
-    const { activeNavItem, photos, albums } = this.state;
+    const { activeNavItem } = this.state;
 
     return (
       <div className="App">
@@ -35,8 +24,6 @@ class App extends Component {
         />
         <Main
           selectedOption={activeNavItem}
-          photos={photos}
-          albums={albums}
         />
       </div>
     );

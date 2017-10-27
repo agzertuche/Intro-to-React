@@ -23,7 +23,7 @@ class Photos extends Component {
 
     return (
       <div>
-        <StatusBar />
+        <StatusBar photos={photos} />
         <Card.Group itemsPerRow={6} doubling>
           {
             Object.keys(photos)

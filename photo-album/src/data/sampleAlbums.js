@@ -4,37 +4,37 @@ const sampleAlbums = {
     name: 'Album one',
     description: 'This is a funny description of the album',
     tags: ['Funny', 'Holiday', 'Family'],
-    idsPhotos: ['photo1', 'photo2', 'photo3', 'photo4'],
+    photosIds: ['photo1', 'photo2', 'photo3', 'photo4'],
   },
   album2: {
     name: 'Album two',
     description: 'A great summer vacation on South Africa',
     tags: ['Summer', 'Vacations', 'Friends', 'South Africa'],
-    idsPhotos: ['photo3', 'photo4'],
+    photosIds: ['photo3', 'photo4'],
   },
   album3: {
     name: 'Album one',
     description: 'This is a funny description of the album',
     tags: ['Funny', 'Holiday', 'Family'],
-    idsPhotos: ['photo1', 'photo2', 'photo3', 'photo4'],
+    photosIds: ['photo1', 'photo2', 'photo3', 'photo4'],
   },
   album4: {
     name: 'Album two',
     description: 'A great summer vacation on South Africa',
     tags: ['Summer', 'Vacations', 'Friends', 'South Africa'],
-    idsPhotos: ['photo4'],
+    photosIds: ['photo4'],
   },
   album5: {
     name: 'Album one',
     description: 'This is a funny description of the album',
     tags: ['Funny', 'Holiday', 'Family'],
-    idsPhotos: ['photo1', 'photo2', 'photo3', 'photo4'],
+    photosIds: ['photo1', 'photo2', 'photo3', 'photo4'],
   },
   album6: {
     name: 'Album two',
     description: 'A great summer vacation on South Africa',
     tags: ['Summer', 'Vacations', 'Friends', 'South Africa'],
-    idsPhotos: ['photo3', 'photo4'],
+    photosIds: ['photo3', 'photo4'],
   },
  
 };
