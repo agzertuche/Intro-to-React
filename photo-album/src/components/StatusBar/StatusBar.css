@@ -1,3 +1,7 @@
-.StatusBar {
-  
+.status-bar .column {
+  padding: 0 1em !important;
+}
+
+.status-bar button {
+  font-size: 0.7em !important;
 }

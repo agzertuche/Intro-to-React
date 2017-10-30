@@ -1,31 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './Nav.css';
-import { Menu } from 'semantic-ui-react';
+import { Header, Menu } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
-const items = ['albums', 'photos'];
+const menuItems = [
+  {
+    name: 'albums',
+    position: null,
+  },
+  {
+    name: 'photos',
+    position: null,
+  },
+  {
+    name: 'login',
+    position: 'right',
+  }
+];
 
 class Nav extends React.Component {
-  state = {
-    activeItem: 'albums'
-  }
-
-  handleItemClick = (e, name) => {
-    this.setState({
-      activeItem: name
-    });
-    this.props.handleNavClick(e, name);
-  };
-
-  renderMenuItems = (key) => {
-    const { activeItem } = this.state;
-
+  renderMenuItems = (item) => {
     return (
       <Menu.Item 
-        key={key}
-        name={key}
-        active={activeItem === key}
-        onClick={(e) => this.handleItemClick(e, key)} 
+        position={item.position}
+        key={item.name}
+        name={item.name}
+        as={NavLink}
+        to={`/${item.name}`}
       />
     );
   }
@@ -33,18 +33,18 @@ class Nav extends React.Component {
   render() {
     return (
       <Menu tabular>
+        <Menu.Item>
+          <Header as='h3' icon='camera retro' floated='right' />  
+        </Menu.Item>
         {
-          items.map(item => {
-            return this.renderMenuItems(item);
+          Object.keys(menuItems)
+          .map(item => {
+            return this.renderMenuItems(menuItems[item]);
           })
-        }
+        } 
       </Menu>
     );
   }
-
-  static propTypes = {
-    handleNavClick: PropTypes.func.isRequired
-  };
 }
 
 export default Nav;

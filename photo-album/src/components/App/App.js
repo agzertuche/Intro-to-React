@@ -1,33 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import Nav from '../Nav';
+import React from 'react';
 import Main from '../Main';
+import Nav from '../Nav';
+import 'semantic-ui-css/semantic.min.css';
 
-class App extends Component {
-  state = { 
-    activeNavItem: 'albums',
-  };
-
-  handleNavItemClick = (e, name) => {
-    this.setState({
-      activeNavItem: name
-    });
-  };
-
-  render() {
-    const { activeNavItem } = this.state;
-
-    return (
-      <div className="App">
-        <Nav
-          handleNavClick={this.handleNavItemClick}
-        />
-        <Main
-          selectedOption={activeNavItem}
-        />
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <Nav />
+      <Main />
+    </div>
+  );
 }
 
 export default App;

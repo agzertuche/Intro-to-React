@@ -1,55 +1,70 @@
+First session:
 Album:
-  ☐ AlbumForm
+  ✔ AlbumForm @done (2017-10-28 03:27:44)
     ✔ Modify @done (2017-10-27 08:15:38)
     ✔ Add @done (2017-10-27 08:15:43)
     ✔ Delete @done (2017-10-27 08:18:36)
-    ☐ Fix validation
-  ☐ Fix album thumbnails alignment
-  ☐ StatusBar
-    ☐ Add total information
-    ☐ Align create button to the right
+    ✔ Fix validation @critical @done (2017-10-28 03:27:42)
+  ✔ Fix album thumbnails alignment @done (2017-10-27 21:29:06)
+  ✔ StatusBar @high @done (2017-10-27 21:09:28)
+    ✔ Add total information @done (2017-10-27 20:08:15)
+    ✔ Align create button to the right @done (2017-10-27 21:09:30)
 
 Photos:
-  ☐ PhotoForm
-    ☐ Modify
-    ☐ Add
-    ☐ Delete
+  ✔ PhotoForm @high @done (2017-10-28 08:38:39)
+    ✔ Modify @done (2017-10-28 08:08:31)
+    ✔ Add @done (2017-10-28 07:27:16)
+    ✔ Delete @done (2017-10-28 08:38:36)
 
 Router:
-  ☐ Albums
-  ☐ Photos
-  
+  ✔ Albums @done (2017-10-29 00:09:14)
+  ✔ Photos @done (2017-10-29 00:09:15)
+  ✔ Login @done (2017-10-29 00:09:16)
+
 LocalStorage:
-  ☐ Add
-  ☐ Edit
-  ☐ Delete
+  ✔ update data folder to fake api @done (2017-10-29 03:52:11)
+  ✔ Add @done (2017-10-29 03:52:12)
+  ✔ Edit @done (2017-10-29 03:52:12)
+  ✘ Delete @cancelled (2017-10-29 03:52:01)
+
+General:
+  ✔ Clear terminal warnings @done (2017-10-29 00:39:50)
+  ✔ Clear browser warnings @done (2017-10-29 01:49:09)
+  ✔ Reorganize component folder scaffolding @done (2017-10-29 02:01:48)
+  ✔ Issue scrolling after previewing a photo @done (2017-10-29 05:07:36)
+  ✔ Clean up components @done (2017-10-29 20:39:39)
+    ✔ App @done (2017-10-28 22:41:51)
+    ✔ Nav @done (2017-10-28 23:47:02)
+    ✔ Main @done (2017-10-28 23:52:11)
+    ✔ Login @done (2017-10-28 23:53:01)
+    ✔ Album @done (2017-10-29 09:01:59)
+      ✔ Convert List to SLC and HOC @done (2017-10-29 09:01:58)
+    ✔ Photo @done (2017-10-29 20:39:38)
+      ✔ Conver List to SLC and HOC @done (2017-10-29 20:39:35)
+    ✔ StatusBar @done (2017-10-29 05:24:23)
+      ✔ Use children props to pass a component as a child @done (2017-10-29 05:24:21)
+
+Course Info:
+  ☐ Create boilerplate repository
+  ☐ Initial repository
+  ☐ Final repository
+
+Second session:
+Testing:
+  ☐ Write some Tests
+  ☐ Test on mobile
 
 Firebase:
   ☐ Add firebase to sync data
 
-General:
-  ☐ Clear terminal warnings
-  ☐ Clear browser warnings
-  ☐ Reorganize component folder scaffolding
-
-Testing:
-  ☐ Write some Tests
-  ☐ Test on mobile
+Autentication:
+  ☐ Login component
+  ☐ Implement oauth
 
 Redux:
   ☐ Implement store
   ☐ actions
   ☐ reducers
 
-Autentication:
-  ☐ Login component
-  ☐ Implement oauth
-
 Deploying:
-  ☐ Publishing the app to herokuapp
-
-Course Info:
-  ☐ Create boilerplate repository
-  ☐ Todo simple repository
-  ☐ Initial repository
-  ☐ Final repository
+  ☐ Publishing the app to herokuapp or githubpages

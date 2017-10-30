@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './Main.css';
-import samplePhotos from '../../data/samplePhotos';
-import sampleAlbums from '../../data/sampleAlbums';
-import Albums from '../Albums';
-import Photos from '../Photos';
+import { Switch, Route } from 'react-router';
+import { sampleAlbums, samplePhotos} from '../../api';
+import { AlbumList } from '../Album';
+import { PhotoList } from '../Photo';
+import Login from '../Login';
+import { Message } from 'semantic-ui-react'
 
 class Main extends Component {
   state = {
-    photos: {},
-    albums: {}
+    albums: {},
+    photos: {}
   }
 
   componentWillMount() {
-    this.setState({
-      photos: samplePhotos,
-      albums: sampleAlbums
-    });
+    // If there is no data in local storage, get data from api
+    const localAlbums = localStorage.getItem('albums');
+    const localPhotos = localStorage.getItem('photos');
+
+    if(localAlbums && localPhotos) {
+      this.setState({
+        albums: JSON.parse(localAlbums),
+        photos: JSON.parse(localPhotos)
+      });
+    } else {
+      this.setState({
+        albums: sampleAlbums,
+        photos: samplePhotos
+      });
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem(
+      'albums',JSON.stringify(nextState.albums)
+    );
+
+    localStorage.setItem(
+      'photos',JSON.stringify(nextState.photos)
+    );
   }
 
   createAlbum =(album) => {
-    debugger;
     const albums = {...this.state.albums};
     const timestamp = Date.now();
     albums[`album-${timestamp}`] = album;
@@ -30,7 +50,6 @@ class Main extends Component {
   }
 
   editAlbum = (key, updatedAlbum) => {
-    debugger;
     const albums = {...this.state.albums};
     albums[key] = updatedAlbum;
     this.setState({
@@ -39,7 +58,6 @@ class Main extends Component {
   }
 
   deleteAlbum = (key) => {
-    debugger;
     const albums = {...this.state.albums};
     delete albums[key];
     this.setState({
@@ -47,46 +65,64 @@ class Main extends Component {
     });
   }
 
-  renderContainer = (containerName) => {
-    const { photos, albums } = this.state;
+  createPhoto =(photo) => {
+    const photos = {...this.state.photos};
+    const timestamp = Date.now();
+    photos[`photo-${timestamp}`] = photo;
+    this.setState({
+      photos
+    });
+  }
 
-    switch (containerName) {
-      case 'albums':
-        return (
-          <Albums 
-            albums={albums} 
-            photos={photos}
-            deleteAlbum={this.deleteAlbum}
-            editAlbum={this.editAlbum}
-            createAlbum={this.createAlbum}
-          />
-        );
-      case 'photos':
-        return (
-          <Photos 
-            photos={photos} 
-          />
-        );
-      default:
-      return (
-        <div>Error</div>
-      );
-    }
+  editPhoto = (key, updatedPhoto) => {
+    const photos = {...this.state.photos};
+    photos[key] = updatedPhoto;
+    this.setState({
+      photos
+    });
+  }
+
+  deletePhoto = (key) => {
+    const photos = {...this.state.photos};
+    delete photos[key];
+    this.setState({
+      photos
+    });
   }
 
   render() {
-    const { selectedOption } = this.props;
+    const { albums, photos } = this.state;
 
+    const albumList = () => <AlbumList 
+                        albums={albums} 
+                        photos={photos}
+                        deleteAlbum={this.deleteAlbum}
+                        editAlbum={this.editAlbum}
+                        createAlbum={this.createAlbum}
+                      />;
+
+    const photoList = () => <PhotoList 
+                        photos={photos} 
+                        deletePhoto={this.deletePhoto}
+                        editPhoto={this.editPhoto}
+                        createPhoto={this.createPhoto}
+                      />;                
+
+    const error = () => <Message 
+                    icon="warning circle"
+                    header="Ups... Error!"
+                    content="Please go back and try again."
+                  />;
     return (
-      <div className="Main">
-        {this.renderContainer(selectedOption)}        
-      </div>
+      <Switch>
+        <Route exact path="/" component={Login} /> 
+        <Route path="/albums" render={albumList} /> 
+        <Route path="/photos" render={photoList} /> 
+        <Route path="/login" render={Login} /> 
+        <Route render={error} />
+      </Switch>
     );
   }
-
-  static propTypes = {
-    selectedOption: PropTypes.string.isRequired,
-  };
 }
 
 export default Main;
