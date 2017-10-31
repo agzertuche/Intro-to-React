@@ -44,12 +44,12 @@ General:
     ✔ StatusBar @done (2017-10-29 05:24:23)
       ✔ Use children props to pass a component as a child @done (2017-10-29 05:24:21)
 
-Course Info:
-  ☐ Create boilerplate repository
-  ☐ Initial repository
-  ☐ Final repository
-
 Second session:
+Redux:
+  ☐ Implement store
+  ☐ actions
+  ☐ reducers
+
 Testing:
   ☐ Write some Tests
   ☐ Test on mobile
@@ -61,10 +61,18 @@ Autentication:
   ☐ Login component
   ☐ Implement oauth
 
-Redux:
-  ☐ Implement store
-  ☐ actions
-  ☐ reducers
-
 Deploying:
   ☐ Publishing the app to herokuapp or githubpages
+
+Course Info:
+  ✔ Create boilerplate repository @done (10/30/2017, 9:50:12 PM)
+  ✔ React only repository @done (10/30/2017, 10:26:40 PM)
+  ☐ Redux repository
+  ☐ Final repository
+    ☐ Testing
+    ☐ Firebase
+    ☐ Auth
+    ☐ Deploy
+  ✔ Mockups @done (10/30/2017, 10:30:10 PM)
+  ☐ Presentation
+  ☐ Update README files

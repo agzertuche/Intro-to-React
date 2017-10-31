@@ -35,7 +35,6 @@ const addLightbox = (WrappedComponent) => {
     }
   
     render() {
-      debugger;
       const { lightboxOpen, lightboxCurrentImage } = this.state;
       const { photos } = this.props;
       const lightboxPhotos = photos
