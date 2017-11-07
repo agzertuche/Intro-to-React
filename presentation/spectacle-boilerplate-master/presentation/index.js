@@ -37,6 +37,7 @@ const slidesImports = [
   import('./slides/React'),
   import('./slides/VirtualDOM'),
   import('./slides/DiffingAlgorithm'),
+  import('./slides/JSX'),
   import('./slides/Components'),
   import('./slides/Stateful'),
   import('./slides/Stateless'),
@@ -44,13 +45,12 @@ const slidesImports = [
   import('./slides/Props'),
   import('./slides/LifeCycle'),
   import('./slides/Render'),
-  import('./slides/JSX'),
   import('./slides/HOC'),
   import('./slides/RealWorldApps'),
   import('./slides/Tooling'),
-  import('./slides/Exercise'),
-  import('./slides/Thanks'),
+  import('./slides/LearnPractice'),
   import('./slides/References'),
+  import('./slides/Thanks'),
 ];
 
 export default class Presentation extends React.Component {

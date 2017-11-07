@@ -1,19 +1,19 @@
 import React from "react";
-import { Heading, Slide, Text } from "spectacle";
+import { Heading, Slide, List, ListItem } from "spectacle";
 
 export default (
   <Slide bgColor="primary">
-    <Heading size={2}  lineHeight={1} textColor="secondary">
+    <Heading size={4} lineHeight={1} textColor="secondary">
       Real world apps using react
     </Heading>
-    <Text margin="10px 0 0" textColor="tertiary" size={1}>
-      https://www.facebook.com/
-      https://www.instagram.com/?hl=en
-      https://www.netflix.com/mx-en/
-      https://web.whatsapp.com/
-      https://www.airbnb.com/
-      https://go.twitch.tv
-      https://outlook.live.com/mail/#/inbox (BETA)
-    </Text>
+    <List textColor="tertiary">
+      <ListItem>https://www.facebook.com</ListItem>
+      <ListItem>https://www.instagram.com</ListItem>
+      <ListItem>https://www.netflix.com</ListItem>
+      <ListItem>https://web.whatsapp.com</ListItem>
+      <ListItem>https://www.airbnb.com</ListItem>
+      <ListItem>https://go.twitch.tv</ListItem>
+      <ListItem>https://outlook.live.com (BETA)</ListItem>
+    </List>
   </Slide>
 );

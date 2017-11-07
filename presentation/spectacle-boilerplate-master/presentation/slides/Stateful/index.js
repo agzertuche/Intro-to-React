@@ -1,11 +1,9 @@
 import React from "react";
-import { Heading, Slide, Text, Link, CodePane, Appear } from "spectacle";
+import { Heading, Slide, CodePane, List, ListItem } from "spectacle";
 
 const code =
 `class InputForm extends React.Component {
-  state = {
-    value: '',
-  }
+  state = { value: '' }
 
   handleChange = (event) => {
     this.setState({ value: event.target.value });
@@ -14,16 +12,11 @@ const code =
   render() {
     return(
       <div>
-        <input
-          name='name'
-          placeholder='Name'
-          type='text'
-          value={this.state.value}
+        <input name='name' placeholder='Name' type='text' value={this.state.value}
           onChange={(e) => this.handleChange(e)}>
         </input>
       </div>
-    )
-  }
+    )}
 }`;
 
 export default (
@@ -31,20 +24,18 @@ export default (
     <Heading size={3} lineHeight={1} textColor="secondary">
       Stateful Component
     </Heading>
-    <Text textSize="1em" margin="10px 0 0" textColor="tertiary">
-      Containers
-      Drives state changes through functions
-      Provides data (i.e. from http layers)
-      Has living knowledge of the current state
-      Is informed by stateless components when something needs to change
-      Renders stateless (or even stateful) child components
-    </Text>
+    <List margin="10px 0 0" textColor="tertiary">
+      <ListItem textSize="0.9em">Can maintain internal data and have the ability to change it</ListItem>
+      <ListItem textSize="0.9em">Provides data</ListItem>
+      <ListItem textSize="0.9em">Has living knowledge of the current state</ListItem>
+      <ListItem textSize="0.9em">Renders stateless (or even stateful) child components</ListItem>
+    </List>
     <CodePane
       lang="jsx"
       source={code}
       margin="20px auto"
       overflow="overflow"
-      textSize="1em"
+      textSize="0.6em"
     />
   </Slide>
 );

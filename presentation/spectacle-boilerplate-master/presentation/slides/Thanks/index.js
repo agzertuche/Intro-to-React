@@ -1,21 +1,16 @@
 import React from "react";
-import preloader from "spectacle/lib/utils/preloader";
-import { Heading, Slide, Text, Image, Table, TableRow, TableItem } from "spectacle";
-
-const images = {
-  reactLogo: require("../../../assets/react-logo.svg"),
-};
-
-preloader(images);
+import { Heading, Slide, Text } from "spectacle";
 
 export default (
   <Slide bgColor="primary">
-    <Image src={images.reactLogo} width="20em" margin="-0.5em 0 0 0" />
     <Heading size={2} caps textColor="secondary" padding="0 0 0.5em 0">
-      React
+      Thanks for comming!!
     </Heading>
-    <Text margin="10px 0 0" textColor="tertiary" size={1}>
-      JavaScript Library for building user interfaces
+    <Text textAlign="right" margin="4em 0 0" textColor="tertiary" size={1}>
+      Arturo De la Garza
+    </Text>
+    <Text textAlign="right" margin="0.5em 0 0" textColor="tertiary" size={1}>
+      https://github.com/agzertuche
     </Text>
   </Slide>
 );

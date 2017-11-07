@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Slide, Text, List, ListItem } from "spectacle";
+import { Heading, Slide, List, ListItem } from "spectacle";
 
 export default (
   <Slide bgColor="primary">
@@ -10,7 +10,7 @@ export default (
       <ListItem>Library, not a Framework</ListItem>
       <ListItem>Declarative</ListItem>
       <ListItem>Component-Based</ListItem>
-      <ListItem>One-way ractive data flow</ListItem>
+      <ListItem>One-way data flow</ListItem>
       <ListItem>Virtual DOM</ListItem>
     </List>
   </Slide>

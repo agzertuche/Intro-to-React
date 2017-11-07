@@ -1,11 +1,11 @@
 import React from "react";
-import { Heading, Slide, Text, Link, CodePane, Appear } from "spectacle";
+import { Heading, Slide, CodePane, List, ListItem } from "spectacle";
 
 const code =
-`const DisplayForm = (props) => {
+`const Greetings = (props) => {
   return (
     <div>
-      <h1>{props.name}</h1>
+      <h1>\`Good morning \${props.name}\!\`</h1>
     </div>
   );
 }`;
@@ -15,20 +15,19 @@ export default (
     <Heading size={3} lineHeight={1} textColor="secondary">
       Stateless Component
     </Heading>
-    <Text textSize="1em" margin="10px 0 0" textColor="tertiary">
-      Avoid mutating data
-      Easy unit testing
-      It can be easily tested with mocked data
-      It can be re-used multiple times to perform the role it has been given
-      It has a defined input (function arguments)
-      It has a defined output (return statement with new data)
-    </Text>
+    <List margin="10px 0 0" textColor="tertiary">
+      <ListItem textSize="0.9em">Avoid mutating data</ListItem>
+      <ListItem textSize="0.9em">Easy to understand</ListItem>
+      <ListItem textSize="0.9em">Easy to test</ListItem>
+      <ListItem textSize="0.9em">No 'this' keyword</ListItem>
+      <ListItem textSize="0.9em">Improve performance</ListItem>
+    </List>
     <CodePane
       lang="jsx"
       source={code}
       margin="20px auto"
       overflow="overflow"
-      textSize="1em"
+      textSize="0.6em"
     />
   </Slide>
 );
