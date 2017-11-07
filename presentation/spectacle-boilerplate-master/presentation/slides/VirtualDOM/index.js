@@ -17,11 +17,11 @@ export default (
       Representation of the DOM in JSON format
     </Text>
     <Image src={images.virtualDom} width="40%" />
-    <List textColor="tertiary" textSize={1}>
-      <ListItem>Pretty fast virtual DOM</ListItem>
-      <ListItem>Only updates sub-tree when required</ListItem>
-      <ListItem>Batch DOM updates</ListItem>
-      <ListItem>Lightweight enough to run on mobile devices</ListItem>
+    <List textColor="tertiary">
+      <ListItem textSize="1em">Pretty fast virtual DOM</ListItem>
+      <ListItem textSize="1em">Only updates sub-tree when required</ListItem>
+      <ListItem textSize="1em">Batch DOM updates</ListItem>
+      <ListItem textSize="1em">Lightweight enough to run on mobile devices</ListItem>
     </List>
     <Notes>
       - Can produce 200,000 virtual DOM nodes a second
