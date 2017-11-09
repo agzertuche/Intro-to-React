@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router';
-import { sampleAlbums, samplePhotos} from '../../api';
+import api from '../../api';
 import { AlbumList } from '../Album';
 import { PhotoList } from '../Photo';
 import Login from '../Login';
@@ -24,8 +24,8 @@ class Main extends Component {
       });
     } else {
       this.setState({
-        albums: sampleAlbums,
-        photos: samplePhotos
+        albums: api.getAlbums(),
+        photos: api.getPhotos(),
       });
     }
   }
