@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Form, Button, Icon, Message } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import * as albumActions from '../../actions/albumActions';
 
 class AlbumForm extends React.Component {
   state = {
@@ -10,7 +12,7 @@ class AlbumForm extends React.Component {
       name: '',
       description: '',
       tags: [],
-      photosIds: [],      
+      photosIds: [],
     }
   }
 
@@ -63,7 +65,7 @@ class AlbumForm extends React.Component {
 
   showForm = () => {
     const { album } = this.props;
-    this.setState({ 
+    this.setState({
       modalOpen: true,
       album,
    });
@@ -87,13 +89,13 @@ class AlbumForm extends React.Component {
                     });
 
     return (
-      <Modal 
+      <Modal
         trigger={
           <Button icon onClick={this.showForm}>
             <Icon name={this.isNewForm() ? 'plus' : 'edit'} />
           </Button>
         }
-        closeIcon 
+        closeIcon
         open={modalOpen}
         onClose={this.closeForm}
       >
@@ -106,40 +108,40 @@ class AlbumForm extends React.Component {
             />
             <Form.Input
               name="name"
-              label="Name" 
+              label="Name"
               placeholder="Album name"
               defaultValue={this.isNewForm() ? '' : album.name}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
               required
             />
-            <Form.TextArea 
+            <Form.TextArea
               name="description"
-              label="Description" 
+              label="Description"
               placeholder="Tell more about the album..."
               defaultValue={this.isNewForm() ? '' : album.description}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
-              required           
+              required
             />
-            <Form.Input 
+            <Form.Input
               name="tags"
-              label="Tags" 
-              placeholder="Enter tags separated by '|' vertical bar(pipe) " 
+              label="Tags"
+              placeholder="Enter tags separated by '|' vertical bar(pipe) "
               defaultValue={this.isNewForm() ? '' : album.tags.join('|')}
-              onChange={(e) => this.handleInputChange(e.target.name, e.target.value.split('|'))} 
-              required 
-              icon="tags" 
-              iconPosition="left" 
+              onChange={(e) => this.handleInputChange(e.target.name, e.target.value.split('|'))}
+              required
+              icon="tags"
+              iconPosition="left"
             />
-            <Form.Dropdown 
+            <Form.Dropdown
               name="photosIds"
-              label="Photos" 
-              placeholder="Select photos for this album" 
+              label="Photos"
+              placeholder="Select photos for this album"
               defaultValue={this.isNewForm() ? '' : album.photosIds}
               onChange={(e, data) => this.handleInputChange(data.name, data.value)}
-              required  
-              fluid 
-              multiple 
-              selection 
+              required
+              fluid
+              multiple
+              selection
               options={options}
             />
           </Form>
@@ -157,8 +159,21 @@ class AlbumForm extends React.Component {
     album:  PropTypes.object,
     index: PropTypes.string,
     editAlbum: PropTypes.func,
-    createAlbum: PropTypes.func,
+    // createAlbum: PropTypes.func,
   }
 }
 
-export default AlbumForm;
+const mapStateToProps = (state) => {
+  return {
+    albums: state.albums,
+    photos: state.photos,
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createAlbum: album => dispatch(albumActions.addAlbum(album)),
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumForm);

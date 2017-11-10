@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router';
-import api from '../../api';
+import * as api from '../../api';
 import { AlbumList } from '../Album';
 import { PhotoList } from '../Photo';
 import Login from '../Login';
@@ -40,14 +40,14 @@ class Main extends Component {
     );
   }
 
-  createAlbum =(album) => {
-    const albums = {...this.state.albums};
-    const timestamp = Date.now();
-    albums[`album-${timestamp}`] = album;
-    this.setState({
-      albums
-    });
-  }
+  // createAlbum =(album) => {
+  //   const albums = {...this.state.albums};
+  //   const timestamp = Date.now();
+  //   albums[`album-${timestamp}`] = album;
+  //   this.setState({
+  //     albums
+  //   });
+  // }
 
   editAlbum = (key, updatedAlbum) => {
     const albums = {...this.state.albums};
@@ -93,32 +93,32 @@ class Main extends Component {
   render() {
     const { albums, photos } = this.state;
 
-    const albumList = () => <AlbumList 
-                        albums={albums} 
+    const albumList = () => <AlbumList
+                        albums={albums}
                         photos={photos}
                         deleteAlbum={this.deleteAlbum}
                         editAlbum={this.editAlbum}
-                        createAlbum={this.createAlbum}
+
                       />;
 
-    const photoList = () => <PhotoList 
-                        photos={photos} 
+    const photoList = () => <PhotoList
+                        photos={photos}
                         deletePhoto={this.deletePhoto}
                         editPhoto={this.editPhoto}
                         createPhoto={this.createPhoto}
-                      />;                
+                      />;
 
-    const error = () => <Message 
+    const error = () => <Message
                     icon="warning circle"
                     header="Ups... Error!"
                     content="Please go back and try again."
                   />;
     return (
       <Switch>
-        <Route exact path="/" component={Login} /> 
-        <Route path="/albums" render={albumList} /> 
-        <Route path="/photos" render={photoList} /> 
-        <Route path="/login" render={Login} /> 
+        <Route exact path="/" component={Login} />
+        <Route path="/albums" render={albumList} />
+        <Route path="/photos" render={photoList} />
+        <Route path="/login" render={Login} />
         <Route render={error} />
       </Switch>
     );

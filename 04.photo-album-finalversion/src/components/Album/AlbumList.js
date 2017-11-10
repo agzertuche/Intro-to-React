@@ -12,11 +12,11 @@ const AlbumList = (props) => {
     return album.photosIds
       .filter(id => photos[id])
       .map(id => {
-        return photos[id]; 
+        return photos[id];
       }
     );
   }
-  
+
   const renderAlbums = () => {
     return (
       Object.keys(albums)
@@ -25,20 +25,20 @@ const AlbumList = (props) => {
         const albumPhotos = getAlbumPhotos(album);
 
         return (
-          <Album 
-            key={key} 
+          <Album
+            key={key}
             album={album}
             albumPhotos={albumPhotos}
           >
             <Button icon>
-              <WithLightbox 
-                photos={albumPhotos} 
+              <WithLightbox
+                photos={albumPhotos}
               >
                 <Icon name='play' />
               </WithLightbox>
-              
+
             </Button>
-            <AlbumForm 
+            <AlbumForm
               formType='Edit'
               index={key}
               album={album}
@@ -49,7 +49,7 @@ const AlbumList = (props) => {
               index={key}
               objectName={album.name}
               deleteObject={deleteAlbum}
-            />   
+            />
           </Album>
         );
       })
@@ -59,10 +59,10 @@ const AlbumList = (props) => {
   return (
     <div>
       <StatusBar title={`${Object.keys(albums).length} Album(s) total`}>
-        <AlbumForm 
+        <AlbumForm
           formType='New'
-          photos={photos} 
-          createAlbum={createAlbum} 
+          photos={photos}
+
         />
       </StatusBar>
       <Card.Group itemsPerRow={4} doubling>
