@@ -29,8 +29,11 @@ export const deleteAlbum = (key) => {
 };
 
 export const addAlbum = (album) => {
+  const timestamp = Date.now();
+  const key = `album-${timestamp}`;
   return {
     type: actionTypes.ADD_ALBUM,
-    album
+    album,
+    key
   }
 };

@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
 
-export default (state = [], action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case actionTypes.SHOW_ALL_ALBUMS:
       console.log(actionTypes.SHOW_ALL_ALBUMS);
@@ -13,13 +13,14 @@ export default (state = [], action) => {
       return state;
     case actionTypes.DELETE_ALBUM:
       console.log(actionTypes.DELETE_ALBUM);
-      return state;
+      let {[action.key]: deleted, ...albums} = state;
+      return albums;
     case actionTypes.ADD_ALBUM:
       console.log(actionTypes.ADD_ALBUM);
-      return [
+      return {
         ...state,
-        action.album
-      ];
+        [action.key]: action.album
+      };
     default:
       return state;
   }

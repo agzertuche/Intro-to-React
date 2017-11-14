@@ -93,14 +93,6 @@ class Main extends Component {
   render() {
     const { albums, photos } = this.state;
 
-    const albumList = () => <AlbumList
-                        albums={albums}
-                        photos={photos}
-                        deleteAlbum={this.deleteAlbum}
-                        editAlbum={this.editAlbum}
-
-                      />;
-
     const photoList = () => <PhotoList
                         photos={photos}
                         deletePhoto={this.deletePhoto}
@@ -116,7 +108,7 @@ class Main extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Login} />
-        <Route path="/albums" render={albumList} />
+        <Route path="/albums" component={AlbumList} />
         <Route path="/photos" render={photoList} />
         <Route path="/login" render={Login} />
         <Route render={error} />
