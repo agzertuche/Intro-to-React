@@ -51,13 +51,13 @@ class AlbumForm extends React.Component {
   handleSubmit = (event) => {
     if(!this.isFormValid()) return;
 
-    const { editAlbum, createAlbum, index } = this.props;
+    const { updateAlbum, createAlbum, index } = this.props;
     const { album } = this.state;
 
     if(this.isNewForm()) {
       createAlbum(album);
     } else {
-      editAlbum(index, album);
+      updateAlbum(index, album);
     }
 
     this.closeForm();
@@ -155,11 +155,8 @@ class AlbumForm extends React.Component {
 
   static propTypes = {
     formType: PropTypes.oneOf(['New', 'Edit']).isRequired,
-    photos: PropTypes.object.isRequired,
     album:  PropTypes.object,
     index: PropTypes.string,
-    editAlbum: PropTypes.func,
-    // createAlbum: PropTypes.func,
   }
 }
 
@@ -168,12 +165,13 @@ const mapStateToProps = (state) => {
     albums: state.albums,
     photos: state.photos,
   }
-};
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     createAlbum: album => dispatch(albumActions.addAlbum(album)),
+    updateAlbum: (key, album) => dispatch(albumActions.updateAlbum(key, album)),
   }
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumForm);

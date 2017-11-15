@@ -1,16 +1,19 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
-import * as api from '../api';
+import { loadState, saveState } from './localStorage';
 
-const initialState = {
-  albums: api.getAlbums(),
-  photos: api.getPhotos(),
-}
+const persistedState = loadState();
 
 const store = createStore(
   rootReducer,
-  initialState,
+  persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+store.subscribe(() => {
+  const { albums, photos } = store.getState();
+  saveState('albums', albums);
+  saveState('photos', photos);
+});
 
 export default store;

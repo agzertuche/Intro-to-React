@@ -46,12 +46,12 @@ General:
 
 Second session:
 Redux:
-  ☐ Implement store
-  ☐ actions
-  ☐ reducers
+  ✔ Implement store @done (2017-11-14 21:15:42)
+  ✔ actions @done (2017-11-14 21:15:43)
+  ✔ reducers @done (2017-11-14 21:15:45)
 
 Testing:
-  ☐ Write some Tests
+  ☐ Write some Tests https://github.com/reactjs/redux/blob/master/docs/recipes/WritingTests.md
   ☐ Test on mobile
 
 Firebase:
@@ -74,7 +74,7 @@ Course Info:
     ☐ Auth
     ☐ Deploy
   ✔ Mockups @done (10/30/2017, 10:30:10 PM)
-  ☐ Presentation  
+  ☐ Presentation
     ✔ Session 1 @done (11/7/2017, 3:18:55 PM)
     ☐ Session 2
   ☐ Update README files

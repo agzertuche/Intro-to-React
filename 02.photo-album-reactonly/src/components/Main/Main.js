@@ -41,7 +41,7 @@ class Main extends Component {
   }
 
   createAlbum =(album) => {
-    const albums = {...this.state.albums};
+    let albums = {...this.state.albums};
     const timestamp = Date.now();
     albums[`album-${timestamp}`] = album;
     this.setState({
@@ -50,7 +50,7 @@ class Main extends Component {
   }
 
   editAlbum = (key, updatedAlbum) => {
-    const albums = {...this.state.albums};
+    let albums = {...this.state.albums};
     albums[key] = updatedAlbum;
     this.setState({
       albums
@@ -58,7 +58,7 @@ class Main extends Component {
   }
 
   deleteAlbum = (key) => {
-    const albums = {...this.state.albums};
+    let albums = {...this.state.albums};
     delete albums[key];
     this.setState({
       albums
@@ -66,7 +66,7 @@ class Main extends Component {
   }
 
   createPhoto =(photo) => {
-    const photos = {...this.state.photos};
+    let photos = {...this.state.photos};
     const timestamp = Date.now();
     photos[`photo-${timestamp}`] = photo;
     this.setState({
@@ -75,7 +75,7 @@ class Main extends Component {
   }
 
   editPhoto = (key, updatedPhoto) => {
-    const photos = {...this.state.photos};
+    let photos = {...this.state.photos};
     photos[key] = updatedPhoto;
     this.setState({
       photos
@@ -83,7 +83,7 @@ class Main extends Component {
   }
 
   deletePhoto = (key) => {
-    const photos = {...this.state.photos};
+    let photos = {...this.state.photos};
     delete photos[key];
     this.setState({
       photos

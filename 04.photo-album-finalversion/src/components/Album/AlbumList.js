@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Album, { AlbumForm } from '../Album';
 import { Card, Button, Icon } from 'semantic-ui-react'
 import StatusBar from '../StatusBar';
@@ -65,7 +64,6 @@ const AlbumList = (props) => {
         <AlbumForm
           formType='New'
           photos={photos}
-
         />
       </StatusBar>
       <Card.Group itemsPerRow={4} doubling>
@@ -80,7 +78,7 @@ const mapStateToProps = (state) => {
     albums: state.albums,
     photos: state.photos,
   }
-};
+}
 
 function mapDispatchToProps(dispatch) {
   return {
