@@ -10,8 +10,8 @@ class Main extends Component {
     return (
       <Message
         icon="warning circle"
-        header="Ups... Error!"
-        content="Please go back and try again."
+        header="Ups... Page Not Found"
+        content="Our engineers didn't found what your are looking for, please try again!"
       />
     );
   }
