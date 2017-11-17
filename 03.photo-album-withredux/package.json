@@ -2,7 +2,6 @@
   "name": "photo-album",
   "description": "App to manage favorites photos from internet as albums.",
   "version": "1.0.0",
-  "homepage": "https: //agzertuche.github.io/intro-to-react/04.photo-album-finalversion",
   "private": true,
   "author": {
     "name": "Arturo De la Garza",
@@ -23,7 +22,6 @@
     "semantic-ui-react": "^0.75.1"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0",
     "babel-eslint": "^7.2.3",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
@@ -40,9 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "analyze": "npm run build & source-map-explorer build/static/js/main.*",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "analyze": "npm run build & source-map-explorer build/static/js/main.*"
   },
   "eslintConfig": {
     "extends": "react-app"
