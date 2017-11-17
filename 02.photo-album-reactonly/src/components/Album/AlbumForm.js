@@ -10,7 +10,7 @@ class AlbumForm extends React.Component {
       name: '',
       description: '',
       tags: [],
-      photosIds: [],      
+      photosIds: [],
     }
   }
 
@@ -28,34 +28,31 @@ class AlbumForm extends React.Component {
 
   isFormValid = () => {
     const { album } = this.state;
-    let isValid = true;
 
-    if(!album
-      || !album.name
-      || !album.description
-      || album.tags.length === 0
-      || album.photosIds.length === 0
-    ) {
-      isValid = false;
-    }
+    if (!album) return false;
+    else if (!album.name) return false;
+    else if (!album.description) return false;
+    else if (!album.tags || album.tags.length === 0) return false;
+    else if (!album.photosIds || album.photosIds.length === 0) return false;
 
-    this.setState({
-      error: !isValid
-    });
-
-    return isValid;
+    return true;
   }
 
   handleSubmit = (event) => {
-    if(!this.isFormValid()) return;
+    if (!this.isFormValid()) {
+      this.setState({ error: true });
+      return;
+    }
 
-    const { editAlbum, createAlbum, index } = this.props;
+    this.setState({ error: false });
+
+    const { updateAlbum, createAlbum, index } = this.props;
     const { album } = this.state;
 
-    if(this.isNewForm()) {
+    if (this.isNewForm()) {
       createAlbum(album);
     } else {
-      editAlbum(index, album);
+      updateAlbum(index, album);
     }
 
     this.closeForm();
@@ -63,7 +60,7 @@ class AlbumForm extends React.Component {
 
   showForm = () => {
     const { album } = this.props;
-    this.setState({ 
+    this.setState({
       modalOpen: true,
       album,
    });
@@ -87,13 +84,13 @@ class AlbumForm extends React.Component {
                     });
 
     return (
-      <Modal 
+      <Modal
         trigger={
           <Button icon onClick={this.showForm}>
             <Icon name={this.isNewForm() ? 'plus' : 'edit'} />
           </Button>
         }
-        closeIcon 
+        closeIcon
         open={modalOpen}
         onClose={this.closeForm}
       >
@@ -106,40 +103,40 @@ class AlbumForm extends React.Component {
             />
             <Form.Input
               name="name"
-              label="Name" 
+              label="Name"
               placeholder="Album name"
               defaultValue={this.isNewForm() ? '' : album.name}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
               required
             />
-            <Form.TextArea 
+            <Form.TextArea
               name="description"
-              label="Description" 
+              label="Description"
               placeholder="Tell more about the album..."
               defaultValue={this.isNewForm() ? '' : album.description}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
-              required           
+              required
             />
-            <Form.Input 
+            <Form.Input
               name="tags"
-              label="Tags" 
-              placeholder="Enter tags separated by '|' vertical bar(pipe) " 
+              label="Tags"
+              placeholder="Enter tags separated by '|' vertical bar(pipe) "
               defaultValue={this.isNewForm() ? '' : album.tags.join('|')}
-              onChange={(e) => this.handleInputChange(e.target.name, e.target.value.split('|'))} 
-              required 
-              icon="tags" 
-              iconPosition="left" 
+              onChange={(e) => this.handleInputChange(e.target.name, e.target.value.split('|'))}
+              required
+              icon="tags"
+              iconPosition="left"
             />
-            <Form.Dropdown 
+            <Form.Dropdown
               name="photosIds"
-              label="Photos" 
-              placeholder="Select photos for this album" 
+              label="Photos"
+              placeholder="Select photos for this album"
               defaultValue={this.isNewForm() ? '' : album.photosIds}
               onChange={(e, data) => this.handleInputChange(data.name, data.value)}
-              required  
-              fluid 
-              multiple 
-              selection 
+              required
+              fluid
+              multiple
+              selection
               options={options}
             />
           </Form>

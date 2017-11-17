@@ -30,26 +30,23 @@ class AlbumForm extends React.Component {
 
   isFormValid = () => {
     const { album } = this.state;
-    let isValid = true;
 
-    if(!album
-      || !album.name
-      || !album.description
-      || album.tags.length === 0
-      || album.photosIds.length === 0
-    ) {
-      isValid = false;
-    }
+    if (!album) return false;
+    else if (!album.name) return false;
+    else if (!album.description) return false;
+    else if (!album.tags || album.tags.length === 0) return false;
+    else if (!album.photosIds || album.photosIds.length === 0) return false;
 
-    this.setState({
-      error: !isValid
-    });
-
-    return isValid;
+    return true;
   }
 
   handleSubmit = (event) => {
-    if(!this.isFormValid()) return;
+    if (!this.isFormValid()) {
+      this.setState({ error: true });
+      return;
+    }
+
+    this.setState({ error: false });
 
     const { updateAlbum, createAlbum, index } = this.props;
     const { album } = this.state;

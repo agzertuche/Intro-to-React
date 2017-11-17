@@ -29,25 +29,22 @@ class PhotoForm extends React.Component {
 
   isFormValid = () => {
     const { photo } = this.state;
-    let isValid = true;
 
-    if(!photo
-      || !photo.title
-      || !photo.description
-      || !photo.url
-    ) {
-      isValid = false;
-    }
+    if (!photo) return false;
+    else if (!photo.title) return false;
+    else if (!photo.description) return false;
+    else if (!photo.url) return false;
 
-    this.setState({
-      error: !isValid
-    });
-
-    return isValid;
+    return true;
   }
 
   handleSubmit = (event) => {
-    if(!this.isFormValid()) return;
+    if (!this.isFormValid()) {
+      this.setState({ error: true });
+      return;
+    }
+
+    this.setState({ error: false });
 
     const { updatePhoto, createPhoto, index } = this.props;
     const { photo } = this.state;

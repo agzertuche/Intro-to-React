@@ -27,25 +27,22 @@ class PhotoForm extends React.Component {
 
   isFormValid = () => {
     const { photo } = this.state;
-    let isValid = true;
 
-    if(!photo
-      || !photo.title
-      || !photo.description
-      || !photo.url
-    ) {
-      isValid = false;
-    }
+    if (!photo) return false;
+    else if (!photo.title) return false;
+    else if (!photo.description) return false;
+    else if (!photo.url) return false;
 
-    this.setState({
-      error: !isValid
-    });
-
-    return isValid;
+    return true;
   }
 
   handleSubmit = (event) => {
-    if(!this.isFormValid()) return;
+    if (!this.isFormValid()) {
+      this.setState({ error: true });
+      return;
+    }
+
+    this.setState({ error: false });
 
     const { editPhoto, createPhoto, index } = this.props;
     const { photo } = this.state;
@@ -61,7 +58,7 @@ class PhotoForm extends React.Component {
 
   showForm = () => {
     const { photo } = this.props;
-    this.setState({ 
+    this.setState({
       modalOpen: true,
       photo,
    });
@@ -73,13 +70,13 @@ class PhotoForm extends React.Component {
   render() {
     const { modalOpen, photo, error } = this.state;
     return (
-      <Modal 
+      <Modal
         trigger={
           <Button icon onClick={this.showForm}>
             <Icon name={this.isNewForm() ? 'plus' : 'edit'} />
           </Button>
         }
-        closeIcon 
+        closeIcon
         open={modalOpen}
         onClose={this.closeForm}
       >
@@ -92,27 +89,27 @@ class PhotoForm extends React.Component {
             />
             <Form.Input
               name="title"
-              label="Title" 
+              label="Title"
               placeholder="Photo title"
               defaultValue={this.isNewForm() ? '' : photo.title}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
               required
             />
-            <Form.TextArea 
+            <Form.TextArea
               name="description"
-              label="Description" 
+              label="Description"
               placeholder="Tell more about the photo..."
               defaultValue={this.isNewForm() ? '' : photo.description}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
-              required           
+              required
             />
-            <Form.Input 
+            <Form.Input
               name="url"
-              label="URL" 
+              label="URL"
               placeholder="URL of the photo"
               defaultValue={this.isNewForm() ? '' : photo.url}
               onChange={(e) => this.handleInputChange(e.target.name, e.target.value)}
-              required           
+              required
             />
           </Form>
         </Modal.Content>
