@@ -7,7 +7,7 @@ class DeleteButton extends React.Component {
     deleteConfirmOpen: false,
   }
 
-  handleDelete = () => {
+  openConfirm = () => {
     this.setState({
       deleteConfirmOpen: true
     });
@@ -24,11 +24,11 @@ class DeleteButton extends React.Component {
   }
 
   render() {
-    const { index, objectName } = this.props;
+    const { objectName } = this.props;
     const { deleteConfirmOpen } = this.state;
 
     return (
-      <Button icon onClick={() => this.handleDelete(index)}>
+      <Button icon onClick={() => this.openConfirm()}>
         <Icon name='trash' /> 
         {deleteConfirmOpen && 
           <Confirm 
