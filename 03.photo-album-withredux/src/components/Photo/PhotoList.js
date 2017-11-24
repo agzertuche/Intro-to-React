@@ -5,7 +5,7 @@ import StatusBar from '../StatusBar';
 import { DeleteButton } from '../Common';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as photoActionsCreators from '../../actions/photoActionsCreators';
+import * as photoActions from '../../actions/photoActions';
 
 const PhotoList = (props) => {
   const { photos } = props;
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    photoActions: bindActionCreators(photoActionsCreators, dispatch),
+    photoActions: bindActionCreators(photoActions, dispatch),
   }
 }
 

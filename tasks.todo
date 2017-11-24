@@ -51,8 +51,13 @@ Redux:
   ✔ reducers @done (2017-11-14 21:15:45)
 
 Testing:
-  ☐ Write some Tests https://github.com/reactjs/redux/blob/master/docs/recipes/WritingTests.md
-  ☐ Test on mobile
+  ✔ Write some Tests https://github.com/reactjs/redux/blob/master/docs/recipes/WritingTests.md @done (11/24/2017, 4:59:27 AM)
+  ✔ Test on mobile @done (11/24/2017, 5:10:21 AM)
+  ✔ Render App @done (11/24/2017, 5:10:24 AM)
+  ✔ Actions @done (11/24/2017, 5:10:25 AM)
+  ✔ Reducers @done (11/24/2017, 5:10:34 AM)
+  ☐ Components
+  ☐ Connected components
 
 Firebase:
   ☐ Add firebase to sync data

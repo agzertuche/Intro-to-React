@@ -41,6 +41,17 @@
     "analyze": "npm run build & source-map-explorer build/static/js/main.*"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "no-console": 0,
+      "no-undef": 0
+    }
   }
 }

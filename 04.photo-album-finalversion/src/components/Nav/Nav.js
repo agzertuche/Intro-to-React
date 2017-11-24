@@ -17,8 +17,8 @@ const menuItems = [
   }
 ];
 
-class Nav extends React.Component {
-  renderMenuItems = (item) => {
+const Nav = () => {
+  const renderMenuItems = (item) => {
     return (
       <Menu.Item 
         position={item.position}
@@ -30,21 +30,19 @@ class Nav extends React.Component {
     );
   }
 
-  render() {
-    return (
-      <Menu tabular>
-        <Menu.Item>
-          <Header as='h3' icon='camera retro' floated='right' />  
-        </Menu.Item>
-        {
-          Object.keys(menuItems)
-          .map(item => {
-            return this.renderMenuItems(menuItems[item]);
-          })
-        } 
-      </Menu>
-    );
-  }
+  return (
+    <Menu tabular>
+      <Menu.Item>
+        <Header as='h3' icon='camera retro' floated='right' />  
+      </Menu.Item>
+      {
+        Object.keys(menuItems)
+        .map(item => {
+          return renderMenuItems(menuItems[item]);
+        })
+      } 
+    </Menu>
+  );
 }
 
 export default Nav;

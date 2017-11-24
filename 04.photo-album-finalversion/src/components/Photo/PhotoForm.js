@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Form, Button, Icon, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import * as photoActionsCreators from '../../actions/photoActionsCreators';
+import * as photoActions from '../../actions/photoActions';
 
 class PhotoForm extends React.Component {
   state = {
@@ -136,8 +136,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createPhoto: photo => dispatch(photoActionsCreators.addPhoto(photo)),
-    updatePhoto: (key, photo) => dispatch(photoActionsCreators.updatePhoto(key, photo)),
+    createPhoto: photo => dispatch(photoActions.addPhoto(photo)),
+    updatePhoto: (key, photo) => dispatch(photoActions.updatePhoto(key, photo)),
   }
 }
 

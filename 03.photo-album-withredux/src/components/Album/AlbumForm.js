@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Form, Button, Icon, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import * as albumActions from '../../actions/albumActionsCreators';
+import * as albumActions from '../../actions/albumActions';
 
 class AlbumForm extends React.Component {
   state = {

@@ -5,7 +5,7 @@ import StatusBar from '../StatusBar';
 import { WithLightbox, DeleteButton } from '../Common';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import * as albumActionsCreators from '../../actions/albumActionsCreators';
+import * as albumActions from '../../actions/albumActions';
 
 const AlbumList = (props) => {
   const { albums, photos } = props;
@@ -82,7 +82,7 @@ const mapStateToProps = (state) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    albumActions: bindActionCreators(albumActionsCreators, dispatch),
+    albumActions: bindActionCreators(albumActions, dispatch),
   }
 }
 

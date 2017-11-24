@@ -35,6 +35,17 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "parser": "babel-eslint",
+    "plugins": [
+      "react"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      // enable additional rules
+      "indent": ["error", 4]
+    }
   }
 }
