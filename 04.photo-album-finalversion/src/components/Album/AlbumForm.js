@@ -4,7 +4,7 @@ import { Modal, Form, Button, Icon, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import * as albumActions from '../../actions/albumActions';
 
-class AlbumForm extends React.Component {
+export class AlbumForm extends React.Component {
   state = {
     error: false,
     modalOpen: false,

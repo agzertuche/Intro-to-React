@@ -9,7 +9,7 @@ const setup = () => {
       description: 'Photo description',
       url: 'https://source.unsplash.com/1600x900/?happy',
     },
-  children: 'Text child',
+    children: 'Text child',
   }
 
   const component = shallow(

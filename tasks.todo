@@ -56,8 +56,8 @@ Testing:
   ✔ Render App @done (11/24/2017, 5:10:24 AM)
   ✔ Actions @done (11/24/2017, 5:10:25 AM)
   ✔ Reducers @done (11/24/2017, 5:10:34 AM)
-  ☐ Components
-  ☐ Connected components
+  ✔ Components @done (11/25/2017, 6:57:07 AM)
+  ✔ Connected components @done (11/25/2017, 6:57:13 AM)
 
 Firebase:
   ☐ Add firebase to sync data

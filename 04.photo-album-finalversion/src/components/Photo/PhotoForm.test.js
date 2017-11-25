@@ -30,7 +30,7 @@ describe('PhotoForm', () => {
 
   describe('New Form', () => {
     const { component } = setup('New');
-    it('should render all photos', () => {
+    it('should render without crash', () => {
       expect(component);
     });
   });
