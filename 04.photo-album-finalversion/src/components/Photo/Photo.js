@@ -28,6 +28,7 @@ const Photo = (props) => {
 
 Photo.propTypes = {
   photo: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Photo;

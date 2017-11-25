@@ -61,6 +61,7 @@ const Album = (props) => {
 Album.propTypes = {
   album: PropTypes.object.isRequired,
   albumPhotos: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default Album;

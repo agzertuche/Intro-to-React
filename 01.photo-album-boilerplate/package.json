@@ -44,8 +44,8 @@
       "plugin:react/recommended"
     ],
     "rules": {
-      // enable additional rules
-      "indent": ["error", 4]
+      "no-console": 1,
+      "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
     }
   }
 }

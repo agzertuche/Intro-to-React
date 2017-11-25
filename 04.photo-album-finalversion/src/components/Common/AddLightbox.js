@@ -1,5 +1,6 @@
 /// This is the enhance component
 import React from 'react';
+import PropTypes from 'prop-types';
 import Lightbox from 'react-images';
 
 const addLightbox = (WrappedComponent) => {
@@ -37,14 +38,15 @@ const addLightbox = (WrappedComponent) => {
     render() {
       const { lightboxOpen, lightboxCurrentImage } = this.state;
       const { photos } = this.props;
-      const lightboxPhotos = photos
-      .filter(photo => photo)
-      .map(photo => {
-        return {
-          src: photo.url,
-          caption: photo.title,
-        }
-      });
+      const lightboxPhotos = 
+        photos
+          .filter(photo => photo)
+          .map(photo => {
+            return {
+              src: photo.url,
+              caption: photo.title,
+            }
+          });
   
       return (
         <div onClick={() => this.handlePlay()} >
@@ -63,6 +65,10 @@ const addLightbox = (WrappedComponent) => {
           />
         </div>
       );
+    }
+
+    static propTypes = {      
+      photos: PropTypes.array.isRequired,
     }
   }
 };

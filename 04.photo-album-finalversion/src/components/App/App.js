@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Main from '../Main';
 import Nav from '../Nav';
 import { BrowserRouter } from 'react-router-dom';
@@ -16,6 +17,10 @@ const App = (props) => {
       </BrowserRouter>
     </Provider>
   );
+}
+
+App.propTypes = {
+  store: PropTypes.object.isRequired,
 }
 
 export default App;

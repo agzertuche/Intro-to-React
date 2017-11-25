@@ -1,3 +1,4 @@
+/* global localStorage */
 import * as api from '../api';
 
 export const loadState = () => {

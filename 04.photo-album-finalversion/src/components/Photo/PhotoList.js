@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Photo, { PhotoForm } from '../Photo';
 import { Card } from 'semantic-ui-react'
 import StatusBar from '../StatusBar';
 import { DeleteButton } from '../Common';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
 import * as photoActions from '../../actions/photoActions';
 
-const PhotoList = (props) => {
+export const PhotoList = (props) => {
   const { photos } = props;
 
   const renderPhoto = () => {
-    const { photoActions } = props;
+    const { deletePhoto } = props;
     return (
       Object.keys(photos)
       .map(key => {
@@ -30,7 +30,7 @@ const PhotoList = (props) => {
             <DeleteButton
               index={key}
               objectName={photo.title}
-              deleteObject={photoActions.deletePhoto}
+              deleteObject={deletePhoto}
             />
           </Photo>
         );
@@ -52,6 +52,10 @@ const PhotoList = (props) => {
   );
 }
 
+PhotoList.propTypes = {
+  photos: PropTypes.object.isRequired,
+}
+
 const mapStateToProps = (state) => {
   return {
     photos: state.photos,
@@ -60,7 +64,7 @@ const mapStateToProps = (state) => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    photoActions: bindActionCreators(photoActions, dispatch),
+    deletePhoto: key => dispatch(photoActions.deletePhoto(key)),
   }
 }
 

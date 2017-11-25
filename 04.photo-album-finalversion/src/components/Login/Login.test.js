@@ -1,9 +1,9 @@
 /* global describe, it, shallow */
 import React from 'react';
-import Nav from '../Nav';
+import Login from '../Login';
 
-describe('Nav', () => {
+describe('Login', () => {
   it('renders without crashing', () => {
-    shallow(<Nav />);
+    shallow(<Login />);
   });
 });

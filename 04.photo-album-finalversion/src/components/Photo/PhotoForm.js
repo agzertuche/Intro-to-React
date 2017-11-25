@@ -4,7 +4,7 @@ import { Modal, Form, Button, Icon, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 import * as photoActions from '../../actions/photoActions';
 
-class PhotoForm extends React.Component {
+export class PhotoForm extends React.Component {
   state = {
     error: false,
     modalOpen: false,
@@ -38,7 +38,7 @@ class PhotoForm extends React.Component {
     return true;
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = () => {
     if (!this.isFormValid()) {
       this.setState({ error: true });
       return;
@@ -46,13 +46,13 @@ class PhotoForm extends React.Component {
 
     this.setState({ error: false });
 
-    const { updatePhoto, createPhoto, index } = this.props;
+    const { updatePhoto, createPhoto, photoKey } = this.props;
     const { photo } = this.state;
 
     if(this.isNewForm()) {
       createPhoto(photo);
     } else {
-      updatePhoto(index, photo);
+      updatePhoto(photoKey, photo);
     }
 
     this.closeForm();
@@ -124,7 +124,10 @@ class PhotoForm extends React.Component {
 
   static propTypes = {
     formType: PropTypes.oneOf(['New', 'Edit']).isRequired,
-    index: PropTypes.string,
+    photoKey: PropTypes.string,
+    updatePhoto: PropTypes.func.isRequired,
+    createPhoto: PropTypes.func.isRequired,
+    photo: PropTypes.object,
   }
 }
 

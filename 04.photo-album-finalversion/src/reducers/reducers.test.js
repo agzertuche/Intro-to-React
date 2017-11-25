@@ -1,3 +1,4 @@
+/* global describe, it, expect, beforeEach */
 import { default as albumsReducer } from './albums';
 import { default as photosReducer } from './photos';
 import * as actionTypes from '../actions/actionTypes';

@@ -1,3 +1,4 @@
+/* global describe, it, expect */
 import * as albumActions from './albumActions';
 import * as photoActions from './photoActions';
 import * as actionTypes from './actionTypes';

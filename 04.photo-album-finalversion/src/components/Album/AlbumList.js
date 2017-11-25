@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Album, { AlbumForm } from '../Album';
 import { Card, Button, Icon } from 'semantic-ui-react'
 import StatusBar from '../StatusBar';
@@ -71,6 +72,12 @@ const AlbumList = (props) => {
       </Card.Group>
     </div>
   );
+}
+
+AlbumList.propTypes = {
+  albums: PropTypes.object.isRequired,
+  photos: PropTypes.object.isRequired,
+
 }
 
 const mapStateToProps = (state) => {

@@ -1,5 +1,5 @@
+/* global describe, it, expect, renderer */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import { DeleteButton } from '../Common';
 
 describe('Common', () => {
@@ -8,7 +8,7 @@ describe('Common', () => {
       <DeleteButton 
         index="My index object" 
         objectName="My object name"
-        deleteObject={() => console.log()}
+        deleteObject={() => {}}
       />).toJSON();
 
     expect(tree).toMatchSnapshot();

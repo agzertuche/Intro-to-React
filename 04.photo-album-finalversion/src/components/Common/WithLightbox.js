@@ -13,6 +13,7 @@ const WithLightbox = (props) => {
 
 WithLightbox.propTypes = {
   photos: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default addLightbox(WithLightbox);

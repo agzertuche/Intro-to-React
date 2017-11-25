@@ -1,3 +1,4 @@
+/* global describe, it, expect, shallow */
 import React from 'react';
 import App from './App';
 import configureStore from '../../store/configureStore';

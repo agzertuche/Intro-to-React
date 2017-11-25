@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case actionTypes.UPDATE_ALBUM:
+    case actionTypes.UPDATE_ALBUM: {
       // return Object.assign({}, state, {
       //   [action.key]: action.updatedAlbum
       // });
@@ -10,14 +10,17 @@ export default (state = {}, action) => {
         ...state,
         [action.key]: action.updatedAlbum
       };
-    case actionTypes.DELETE_ALBUM:
+    }
+    case actionTypes.DELETE_ALBUM: {
       let {[action.key]: albumDeleted, ...restOfAlbums} = state;
       return restOfAlbums;
-    case actionTypes.ADD_ALBUM:
+    }
+    case actionTypes.ADD_ALBUM: {
       return {
         [action.key]: action.album,
         ...state
       };
+    }
     default:
       return state;
   }
