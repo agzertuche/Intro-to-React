@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import albums from './albums';
-import photos from './photos';
+import albumReducer from './albumReducer';
+import photoReducer from './photoReducer';
+import authReducer from './authReducer';
 
 const rootReducer = combineReducers({
-  albums,
-  photos,
+  albums: albumReducer,
+  photos: photoReducer,
+  user: authReducer,
 });
 
 export default rootReducer;

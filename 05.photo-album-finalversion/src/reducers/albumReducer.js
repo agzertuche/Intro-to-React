@@ -2,10 +2,12 @@ import * as actionTypes from '../actions/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
+    case actionTypes.LOAD_ALBUMS: {
+      return {
+        ...action.albums
+      };
+    }
     case actionTypes.UPDATE_ALBUM: {
-      // return Object.assign({}, state, {
-      //   [action.key]: action.updatedAlbum
-      // });
       return {
         ...state,
         [action.key]: action.updatedAlbum

@@ -169,7 +169,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createAlbum: album => dispatch(albumActions.addAlbumFirebase(album)),
+    createAlbum: album => dispatch(albumActions.addAlbum(album)),
     updateAlbum: (key, album) => dispatch(albumActions.updateAlbum(key, album)),
   }
 }

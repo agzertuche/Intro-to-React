@@ -2,26 +2,21 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
-import { loadState, saveState } from './localStorage';
 
-const configureStore = () => {
-  const persistedState = loadState();
-  let middleware = compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
+const configureStore = (initialState = {}) => { 
+  
+  let middleware = applyMiddleware(thunk);
+
+  const devToolsExtension = window.devToolsExtension;
+  if (typeof devToolsExtension === 'function') {
+    middleware = compose(middleware, devToolsExtension());
+  }
 
   const store = createStore(
     rootReducer,
-    persistedState,
-    middleware    
-  );
-
-  store.subscribe(() => {
-    const { albums, photos } = store.getState();
-    saveState('albums', albums);
-    saveState('photos', photos);
-  });
+    initialState,
+    middleware,
+  );  
 
   return store;
 }

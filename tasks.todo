@@ -60,14 +60,18 @@ Testing:
   ✔ Connected components @done (11/25/2017, 6:57:13 AM)
 
 Firebase:
-  ☐ Add firebase to sync data
+  ✔ Add firebase to sync data @done (11/26/2017, 8:32:37 AM)
 
 Autentication:
-  ☐ Login component
-  ☐ Implement oauth
+  ✔ Login component @done (11/26/2017, 8:32:41 AM)
+  ✔ connect logged user to firebase @done (11/26/2017, 6:45:30 PM)
+  ✔ Implement oauth @done (11/26/2017, 6:45:32 PM)
+  ✔ logout @done (11/26/2017, 6:45:34 PM)
+  ✔ Get data from corresponding user @done (11/26/2017, 9:47:44 PM)
+  ✔ Update data from corresponding user @done (11/26/2017, 9:47:45 PM)
 
 Deploying:
-  ☐ Publishing the app to herokuapp or githubpages
+  ✔ Publishing the app to photo-album.arturodelagarza.com @done (11/26/2017, 8:33:45 AM)
 
 Course Info:
   ✔ Create boilerplate repository @done (10/30/2017, 9:50:12 PM)

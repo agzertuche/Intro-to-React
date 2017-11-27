@@ -52,7 +52,8 @@
       "plugin:react/recommended"
     ],
     "rules": {
-      "no-console": 1,
+      "no-undef": 0,
+      "no-console": 0,
       "no-unused-vars": [
         "error",
         {

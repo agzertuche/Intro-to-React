@@ -1,6 +1,6 @@
 /* global describe, it, expect, beforeEach */
-import { default as albumsReducer } from './albums';
-import { default as photosReducer } from './photos';
+import { default as albumReducer } from './albumReducer';
+import { default as photoReducer } from './photoReducer';
 import * as actionTypes from '../actions/actionTypes';
 
 let key = '';
@@ -25,7 +25,7 @@ describe('Reducers', () => {
 
   describe('AlbumReducer', () => {
     it('should return the initial state of the Albums', () => {
-      expect(albumsReducer({}, {})).toEqual({});
+      expect(albumReducer({}, {})).toEqual({});
     });
 
     it('should handle ADD_ALBUM', () => {
@@ -34,7 +34,7 @@ describe('Reducers', () => {
         album,
         key
       }
-      const resultEmptyState = albumsReducer({}, action);
+      const resultEmptyState = albumReducer({}, action);
 
       expect(resultEmptyState).toEqual({
         [key]: album
@@ -44,7 +44,7 @@ describe('Reducers', () => {
         [key]: album
       }
 
-      const result = albumsReducer(initialState, action);
+      const result = albumReducer(initialState, action);
 
       expect(result).toEqual({
         [key]: album,
@@ -62,7 +62,7 @@ describe('Reducers', () => {
         [key]: album
       }
 
-      const result = albumsReducer(initialState, action);
+      const result = albumReducer(initialState, action);
 
       expect(result).toEqual({})
     });
@@ -83,7 +83,7 @@ describe('Reducers', () => {
         [key]: album
       }      
 
-      const result = albumsReducer(initialState, action);
+      const result = albumReducer(initialState, action);
 
       expect(result).toEqual({
         [key]: updatedAlbum
@@ -94,7 +94,7 @@ describe('Reducers', () => {
 
   describe('PhotoReducer', () => {
     it('should return the initial state of the Photos', () => {
-      expect(photosReducer({}, {})).toEqual({});
+      expect(photoReducer({}, {})).toEqual({});
     });
 
     it('should handle ADD_PHOTO', () => {
@@ -103,7 +103,7 @@ describe('Reducers', () => {
         photo,
         key
       }
-      const resultEmptyState = photosReducer({}, action);
+      const resultEmptyState = photoReducer({}, action);
 
       expect(resultEmptyState).toEqual({
         [key]: photo
@@ -113,7 +113,7 @@ describe('Reducers', () => {
         [key]: photo
       }
 
-      const result = photosReducer(initialState, action);
+      const result = photoReducer(initialState, action);
 
       expect(result).toEqual({
         [key]: photo,
@@ -131,7 +131,7 @@ describe('Reducers', () => {
         [key]: photo
       }
 
-      const result = photosReducer(initialState, action);
+      const result = photoReducer(initialState, action);
 
       expect(result).toEqual({})
     });
@@ -152,7 +152,7 @@ describe('Reducers', () => {
         [key]: photo
       }      
 
-      const result = photosReducer(initialState, action);
+      const result = photoReducer(initialState, action);
 
       expect(result).toEqual({
         [key]: updatedPhoto

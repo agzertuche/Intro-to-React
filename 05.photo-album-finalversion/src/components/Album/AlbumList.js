@@ -76,7 +76,6 @@ export const AlbumList = (props) => {
 AlbumList.propTypes = {
   albums: PropTypes.object.isRequired,
   photos: PropTypes.object.isRequired,
-
 }
 
 const mapStateToProps = (state) => {
