@@ -33,24 +33,17 @@ const theme = createTheme({
 });
 
 const slidesImports = [
-  import('./slides/Cover'),
-  import('./slides/React'),
-  import('./slides/VirtualDOM'),
-  import('./slides/DiffingAlgorithm'),
-  import('./slides/JSX'),
+  import('./slides/CoverRedux'),
+  import('./slides/WhyRedux'),
+  import('./slides/ReactvsRedux'),  
+  import('./slides/ThreePrinciples'),
+  import('./slides/DataFlow'),    
+  import('./slides/Actions'),
+  import('./slides/Reducers'),
+  import('./slides/Store'),
   import('./slides/Components'),
-  import('./slides/Stateful'),
-  import('./slides/Stateless'),
-  import('./slides/State'),
-  import('./slides/Props'),
-  import('./slides/LifeCycle'),
-  import('./slides/Render'),
-  import('./slides/HOC'),
-  import('./slides/RealWorldApps'),
-  import('./slides/Tooling'),
-  import('./slides/LearnPractice'),
-  import('./slides/References'),
-  import('./slides/Thanks'),
+  import('./slides/CoverJest'),
+  import('./slides/References'),  
 ];
 
 export default class Presentation extends React.Component {
