@@ -42,8 +42,18 @@ const slidesImports = [
   import('./slides/Reducers'),
   import('./slides/Store'),
   import('./slides/Components'),
+  import('./slides/ReduxPractice'),  
   import('./slides/CoverJest'),
-  import('./slides/References'),  
+  import('./slides/WhyJest'),
+  import('./slides/RunningTests'),
+  import('./slides/WritingTests'),
+  import('./slides/Enzyme'),
+  import('./slides/TestingComponents'),
+  import('./slides/TestingRedux'),  
+  import('./slides/CoverageReporting'),
+  import('./slides/JestPractice'),  
+  import('./slides/References'),
+  import('./slides/Thanks'),
 ];
 
 export default class Presentation extends React.Component {

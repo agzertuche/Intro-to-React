@@ -17,17 +17,20 @@ This course will help you understand React JS and how to develop an App using th
 - High order components (HOC)
 - Implementing third party controls
 - Redux
+- Jest Unit Testing
 
 # Repository Structure
 This repository includes the following information:
 - [App mockups](./mockups)
 - [Session 1 presentation](http://photo-album.arturodelagarza.com/Intro-To-React-Presentation1.pdf)
+- [Session 2 presentation](http://photo-album.arturodelagarza.com/Redux-JestUnitTesting.pdf)
 
 And project folders for each development stage of the App:
 1. [Boilderplate project](./01.photo-album-boilerplate): Starter project
 2. [React only project](./02.photo-album-reactonly): Project using React and React-Router without Redux
 3. [React-Redux project](./03.photo-album-withredux): Project using React-Redux to manage better the data flow of the App
-4. [Final version project](./04.photo-album-finalversion): Final version of the project, Unit testing, Authentication and Data stored on Firebase. (In progress...)
+4. [Jest Unit Testing project](./04.photo-album-unittesting): Project using Jest  unit testing.
+4. [Final version project](./05.photo-album-finalversion): Final version of the project with Authentication and Data stored on Firebase.
 
 # Getting Started
 Fork or clone this repo, then run below commands:
