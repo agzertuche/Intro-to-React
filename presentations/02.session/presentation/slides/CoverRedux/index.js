@@ -10,7 +10,7 @@ preloader(images);
 
 export default (
   <Slide bgColor="primary">
-    <Image src={images.reduxLogo} width="16em" margin="-0.5em 0 0 0" />
+    <Image src={images.reduxLogo} width="16em" margin="-1em 0 0 0" />
     <Heading size={2} caps textColor="secondary" padding="0 0 0.5em 0">
       React-Redux
     </Heading>
