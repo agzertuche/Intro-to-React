@@ -5,14 +5,14 @@ import { MemoryRouter } from 'react-router';
 import { Message } from 'semantic-ui-react'
 import { AlbumList } from '../Album/AlbumList';
 import { PhotoList } from '../Photo/PhotoList';
-import Login from '../Login';
+import Auth from '../Auth';
 
 const setup = (path) => {
   const component = mount(
     <MemoryRouter initialEntries={[ path ]}>
       <Main/>
     </MemoryRouter>
-  ); 
+  );
 
   return {
     component,
@@ -27,7 +27,7 @@ describe('Main', () => {
 
   it('should render landing page', () => {
     const { component } = setup('/');
-    expect(component.find(Login)).toHaveLength(1);
+    expect(component.find(Auth)).toHaveLength(1);
   });
 
   // it('should render albums page', () => {
@@ -40,8 +40,8 @@ describe('Main', () => {
   //   expect(component.find(PhotoList)).toHaveLength(1);
   // });
 
-  it('should render login page', () => {
-    const { component } = setup('/login');
-    expect(component.find(Login)).toHaveLength(1);
+  it('should render auth page', () => {
+    const { component } = setup('/auth');
+    expect(component.find(Auth)).toHaveLength(1);
   });
 });

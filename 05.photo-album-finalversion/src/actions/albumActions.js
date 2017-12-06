@@ -7,8 +7,8 @@ const path = '/albums';
 
 export const updateAlbum = (key, updatedAlbum) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}/${key}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}/${key}`)
       .update(updatedAlbum)
       .then(() => {
         dispatch({
@@ -23,8 +23,8 @@ export const updateAlbum = (key, updatedAlbum) => {
 
 export const deleteAlbum = (key) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}/${key}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}/${key}`)
       .remove()
       .then(() => {
         dispatch({
@@ -38,8 +38,8 @@ export const deleteAlbum = (key) => {
 
 export const addAlbum = (album) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}`)
       .push(album)
       .then(() => {
         dispatch({
@@ -53,8 +53,8 @@ export const addAlbum = (album) => {
 
 export const loadAlbums = () => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}`)
       .once('value')
       .then(snapshot => {
         const albums = snapshot.val() || {};

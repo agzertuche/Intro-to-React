@@ -11,21 +11,18 @@ const menuItems = [
     name: 'photos',
     position: null,
   },
-  {
-    name: 'login',
-    position: 'right',
-  }
 ];
 
 const Nav = () => {
   const renderMenuItems = (item) => {
     return (
-      <Menu.Item 
+      <Menu.Item
         position={item.position}
-        key={item.name}
         name={item.name}
+        key={item.name}
         as={NavLink}
-        to={`/${item.name}`}
+        to={`/${item.to || item.name}`}
+        icon={item.icon || ''}
       />
     );
   }
@@ -33,14 +30,20 @@ const Nav = () => {
   return (
     <Menu tabular>
       <Menu.Item>
-        <Header as='h3' icon='camera retro' floated='right' />  
+        <Header as='h3' icon='camera retro' floated='right' />
       </Menu.Item>
       {
         Object.keys(menuItems)
-        .map(item => {
-          return renderMenuItems(menuItems[item]);
-        })
-      } 
+          .map(item => {
+            return renderMenuItems(menuItems[item]);
+          })
+      }
+      <Menu.Item
+        position='right'
+        as={NavLink}
+        to='/auth'
+        icon='cogs'
+      />
     </Menu>
   );
 }

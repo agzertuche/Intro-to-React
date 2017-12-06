@@ -6,8 +6,8 @@ const path = '/photos';
 
 export const updatePhoto = (key, updatedPhoto) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}/${key}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}/${key}`)
       .update(updatedPhoto)
       .then(() => {
         dispatch({
@@ -22,8 +22,8 @@ export const updatePhoto = (key, updatedPhoto) => {
 
 export const deletePhoto = (key) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}/${key}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}/${key}`)
       .remove()
       .then(() => {
         dispatch({
@@ -37,8 +37,8 @@ export const deletePhoto = (key) => {
 
 export const addPhoto = (photo) => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}`)
       .push(photo)
       .then(() => {
         dispatch({
@@ -52,8 +52,8 @@ export const addPhoto = (photo) => {
 
 export const loadPhotos = () => {
   return (dispatch, getState) => {
-    const { user } = getState();
-    database.ref(`users/${user.uid}/${path}`)
+    const { auth } = getState();
+    database.ref(`users/${auth.user.uid}/${path}`)
       .once('value')
       .then(snapshot => {
         const photos = snapshot.val() || {};
