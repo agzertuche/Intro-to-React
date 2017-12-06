@@ -1,6 +1,6 @@
 /* global window */
 import { createStore, applyMiddleware, compose } from 'redux';
-import appReducer from '../reducers';
+import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
 
 const configureStore = (initialState = {}) => {
@@ -13,7 +13,7 @@ const configureStore = (initialState = {}) => {
   }
 
   const store = createStore(
-    appReducer,
+    rootReducer,
     initialState,
     middleware,
   );

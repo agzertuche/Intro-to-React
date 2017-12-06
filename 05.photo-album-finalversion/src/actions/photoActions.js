@@ -46,6 +46,9 @@ export const addPhoto = (photo) => {
           photo,
         });
       })
+      .then(() => {
+        dispatch(loadPhotos());
+      })
       .catch(err => console.error(err));
   }
 };

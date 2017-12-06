@@ -22,7 +22,6 @@ const Nav = () => {
         key={item.name}
         as={NavLink}
         to={`/${item.to || item.name}`}
-        icon={item.icon || ''}
       />
     );
   }

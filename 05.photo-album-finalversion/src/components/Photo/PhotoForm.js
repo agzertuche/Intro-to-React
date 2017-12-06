@@ -46,13 +46,13 @@ export class PhotoForm extends React.Component {
 
     this.setState({ error: false });
 
-    const { updatePhoto, createPhoto, photoKey } = this.props;
+    const { updatePhoto, createPhoto, index } = this.props;
     const { photo } = this.state;
 
     if(this.isNewForm()) {
       createPhoto(photo);
     } else {
-      updatePhoto(photoKey, photo);
+      updatePhoto(index, photo);
     }
 
     this.closeForm();
@@ -124,7 +124,7 @@ export class PhotoForm extends React.Component {
 
   static propTypes = {
     formType: PropTypes.oneOf(['New', 'Edit']).isRequired,
-    photoKey: PropTypes.string,
+    index: PropTypes.string,
     updatePhoto: PropTypes.func.isRequired,
     createPhoto: PropTypes.func.isRequired,
     photo: PropTypes.object,

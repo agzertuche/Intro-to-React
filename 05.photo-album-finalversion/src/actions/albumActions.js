@@ -47,6 +47,9 @@ export const addAlbum = (album) => {
           album,
         });
       })
+      .then(() => {
+        dispatch(loadAlbums());
+      })
       .catch(err => console.error(err));
   }
 };
